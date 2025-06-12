@@ -1,0 +1,21 @@
+[flake8]
+# Adiciona uma lista de diretórios a serem ignorados pelo flake8.
+# Inclui pastas comuns como .venv, __pycache__, e as migrações do alembic.
+exclude =
+    .venv,
+    __pycache__,
+    .git,
+    alembic/versions
+
+# Define o comprimento máximo da linha para 88, que é o padrão do Black,
+# garantindo que as duas ferramentas não entrem em conflito.
+max-line-length = 88
+
+# Ignora o erro E203 (espaço em branco antes de ':'), que conflita com o Black.
+extend-ignore = E203
+
+# Ignora erros específicos por arquivo.
+per-file-ignores =
+    # O arquivo env.py do Alembic precisa modificar o sys.path antes de importar
+    # módulos da aplicação, o que gera o erro E402 (import não está no topo do arquivo).
+    alembic/env.py:E402

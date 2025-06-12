@@ -1,0 +1,17 @@
+[tool.black]
+line-length = 88
+exclude = '''
+/(
+    \.git
+  | \.venv
+  | __pycache__
+  | alembic/versions
+)/
+'''
+
+[tool.isort]
+# Define o perfil de formatação para ser compatível com o Black.
+# Esta é a linha mais importante para resolver o conflito.
+profile = "black"
+# Define o comprimento da linha para o mesmo valor do Black.
+line_length = 88
