@@ -43,8 +43,7 @@ cp .env.example .env
 docker compose up --build -d
 ```
 
-- Acesse a API em: http://localhost:8000
-- Documentação Swagger: http://localhost:8000/docs
+Acesse a API em: http://localhost:8000
 
 ## Endpoints principais
 | Método | Rota | Descrição |
@@ -56,6 +55,8 @@ docker compose up --build -d
 | GET | `/api/v1/orders` | Listar pedidos |
 | PUT | `/api/v1/orders/{id}` | Atualizar um pedido |
 | DELETE | `/api/v1/orders/{id}` | Deletar um pedido |
+
+Documentação Swagger completa: http://localhost:8000/docs
 
 ## Testes e Lint
 1. Crie um ambiente virtual e ative:

@@ -1,0 +1,7 @@
+# terraform.tfvars.example
+aws_region     = "us-east-1"
+db_user        = "postgres"
+db_password    = "SENHA_AQUI"
+ssh_key_name   = "fastdelivery-key"
+docker_image   = "1234567890.dkr.ecr.us-east-1.amazonaws.com/fastdelivery:latest"
+database_url   = "postgresql+psycopg2://user:pass@endpoint:5432/db"

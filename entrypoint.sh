@@ -1,9 +1,11 @@
 #!/bin/bash
 
-echo "Executando migrations Alembic..."
-alembic upgrade head
+if [ "$ENV" = "development" ]; then
+  echo "Executando migrations Alembic (modo desenvolvimento)..."
+  alembic upgrade head
+fi
 
-echo "Criando dados iniciais..."
+echo "Executando seed..."
 python src/infra/db/seed.py
 
 echo "Iniciando aplicação..."

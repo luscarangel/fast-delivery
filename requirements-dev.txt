@@ -1,0 +1,9 @@
+-r requirements.txt
+pytest==8.4.0
+pytest-dotenv==0.5.2
+black==25.1.0
+isort==6.0.1
+flake8==7.2.0
+mypy_extensions==1.1.0
+watchfiles==1.0.5
+httpx==0.28.1
