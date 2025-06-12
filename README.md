@@ -1,6 +1,6 @@
 # FastDelivery API
 
-Esta API simula o gerenciamento de entregadores e pedidos, incluindo controle de status de entrega, usando **FastAPI** e arquitetura limpa, com suporte a banco de dados, testes automatizados
+Esta API simula o gerenciamento de entregadores e pedidos, incluindo controle de status de entrega, usando **FastAPI** e arquitetura limpa, com suporte a banco de dados, testes automatizados, e deploy na AWS
 
 ## Tecnologias utilizadas
 
@@ -22,6 +22,7 @@ Esta API simula o gerenciamento de entregadores e pedidos, incluindo controle de
 ```
 alembic/        # Migrations
 core/           # Configurações
+terraform/      # IaC
 src/
 ├── api/        # Rotas e controllers
 ├── domain/     # Entidades e interfaces
@@ -82,7 +83,10 @@ isort .  # Organiza imports
 flake8 . # Linting
 ```
 
-## Esteira CI
+## Esteira CI/CD
 Configuração via GitHub Actions em `.github/workflows`
 - Pipeline executado a cada push/pull request para a master
-- Roda testes e valida o código com lint
+- Roda testes unitários e de integração
+- Valida o código com lint
+- Constrói a infraestrutura cloud
+- Faz deploy para AWS
